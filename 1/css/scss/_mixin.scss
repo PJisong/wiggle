@@ -1,0 +1,17 @@
+@mixin font($size: 12px, $weight: normal, $color: #000) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $style;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin grid-layout($columns, $gap: 20px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: $gap;
+}
