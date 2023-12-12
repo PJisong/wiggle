@@ -1,7 +1,11 @@
+$primary-color: #f0a5c4;
+$light-color: #ffecf2;
+$vivid-color: #f56e97;
+
 @mixin font($size: 12px, $weight: normal, $color: #000) {
   font-size: $size;
   font-weight: $weight;
-  color: $style;
+  color: $color;
 }
 
 @mixin flex-center {

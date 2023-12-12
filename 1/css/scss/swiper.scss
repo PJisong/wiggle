@@ -1,0 +1,57 @@
+@import "./_mixin";
+
+.slide__main {
+  margin-bottom: 16px;
+  .swiper {
+    height: 700px;
+    &-slide {
+      width: 1400px !important;
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.6;
+      cursor: pointer;
+      &-active {
+        opacity: 1;
+      }
+    }
+    &-pagination {
+      &-bullet {
+        width: 50px;
+        border-radius: 0;
+        opacity: 1;
+        background: #bbb;
+        &-active {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.slide__banner {
+  .swiper {
+    &-slide {
+      cursor: pointer;
+      &__img {
+        width: 100%;
+        height: 350px;
+        margin-bottom: 8px;
+      }
+      &__title {
+        margin-bottom: 8px;
+        @include font(18px, 700, #000);
+      }
+      &__tag {
+        span {
+          @include font(14px, 400, $vivid-color);
+          display: inline-block;
+          padding: 4px 8px;
+          background: $light-color;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}
