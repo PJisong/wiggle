@@ -26,6 +26,9 @@
   background: #f0a5c4;
 }
 
+.slide__banner {
+  margin-bottom: 16px;
+}
 .slide__banner .swiper-slide {
   cursor: pointer;
 }

@@ -1,0 +1,88 @@
+@import "./_mixin";
+
+#container {
+  .items {
+    width: 100%;
+    padding: 20px 8% 0;
+    &__wrap {
+      width: 100%;
+      & + .items__wrap {
+        margin-top: 50px;
+      }
+    }
+    &__title {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 10px;
+      .title {
+        @include font(24px, 700, #000);
+        margin-right: 10px;
+      }
+      .more {
+        cursor: pointer;
+        color: #3c3c3c;
+      }
+    }
+    &__box {
+      width: calc(25% - 20px);
+      cursor: pointer;
+      > div {
+        margin-bottom: 5px;
+      }
+      &__wrap {
+        display: flex;
+        width: 100%;
+        column-gap: 20px;
+        flex-wrap: wrap;
+      }
+      .items {
+        &__img {
+          width: 100%;
+          aspect-ratio: 1/1;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        &__name {
+          @include font(16px, 700, #000);
+        }
+        &__price {
+          display: flex;
+          align-items: center;
+          column-gap: 10px;
+          &--total {
+            @include font(15px, 600, #000);
+          }
+          &--normal {
+            @include font(12px, 400, #ccc);
+            text-decoration: line-through;
+          }
+          &--discount {
+            @include font(14px, 600, #ff3d0d);
+          }
+        }
+        &__tag {
+          display: flex;
+          align-items: center;
+          column-gap: 8px;
+          > div {
+            padding: 4px;
+            border-radius: 3px;
+          }
+          &--pink {
+            background: pink;
+            @include font(12px, 600, #fff);
+          }
+          &--purple {
+            background: #924892;
+            @include font(12px, 600, #fff);
+          }
+          &--beige {
+            background: beige;
+            @include font(12px, 600, #000);
+          }
+        }
+      }
+    }
+  }
+}

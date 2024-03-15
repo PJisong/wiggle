@@ -1,7 +1,9 @@
-var burger = document.querySelector(".menu-trigger");
-var header = document.querySelector("header");
-var allMenu = document.querySelector(".allMenu");
-var navAll = document.querySelector(".nav__all");
+const burger = document.querySelector(".menu-trigger");
+const header = document.querySelector("header");
+const allMenu = document.querySelector(".allMenu");
+const navAll = document.querySelector(".nav__all");
+const priceElements = document.querySelectorAll(".items__price");
+const itemsImg = document.querySelectorAll(".items__img");
 
 burger.addEventListener("click", function () {
   this.classList.toggle("active");
@@ -13,8 +15,8 @@ navAll.addEventListener("click", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   if (header && allMenu) {
-    var headerHeight = header.offsetHeight; // header의 높이 구하기
-    allMenu.style.top = headerHeight + "px"; // allMenu의 top 값을 header 높이로 설정
+    const headerHeight = header.offsetHeight;
+    allMenu.style.top = headerHeight + "px";
   }
 });
 
@@ -42,4 +44,24 @@ const swiperBanner = new Swiper(".slide__banner .swiper", {
   autoplay: {
     delay: 5000,
   },
+});
+
+//각 가격 할인값
+priceElements.forEach((priceElement) => {
+  const normalPriceElement = priceElement.querySelector(".items__price--normal");
+  const discountElement = priceElement.querySelector(".items__price--discount");
+  const totalPriceElement = priceElement.querySelector(".items__price--total");
+
+  const normalPrice = parseFloat(normalPriceElement.textContent.replace(",", ""));
+  const discountPercent = parseFloat(discountElement.textContent);
+
+  const discountedPrice = normalPrice * (1 - discountPercent / 100);
+
+  totalPriceElement.textContent = discountedPrice.toLocaleString();
+});
+
+//아이템 이미지
+itemsImg.forEach((item, index) => {
+  const imageUrl = `url('../img/item__img-${index + 1}.png')`;
+  item.style.backgroundImage = imageUrl;
 });
