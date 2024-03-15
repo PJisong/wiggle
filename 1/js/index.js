@@ -62,6 +62,6 @@ priceElements.forEach((priceElement) => {
 
 //아이템 이미지
 itemsImg.forEach((item, index) => {
-  const imageUrl = `url('../img/item__img-${index + 1}.png')`;
+  const imageUrl = `url('img/item__img-${index + 1}.png')`;
   item.style.backgroundImage = imageUrl;
 });
